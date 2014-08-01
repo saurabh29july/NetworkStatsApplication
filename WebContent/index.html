@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Network Stats SDN Application | SDN{Geeks}</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/freelancer.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="font-awesome-4.1.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link
+	href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top" class="index">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#page-top">Network Stats SDN
+					Application</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="hidden"><a href="#page-top"></a></li>
+					<li class="page-scroll"><a href="#nodes">Network Devices</a></li>
+					<li class="page-scroll"><a href="#port">Port Stats</a></li>
+					<li class="page-scroll"><a href="#table">Table Stats</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<p>
+						Network Statistics SDN Application runs on-top of a OpenDaylight
+						SDN Controller. <br />It tracks port, table and flow statistics
+						of all the nodes added to OpenDaylight. Run this application on
+						tomcat locally and supply the credentials below to see it in
+						action.
+					</p>
+					<p>This is a pure jQuery/Bootstrap and HTML based application
+						without any backend in itself.</p>
+				</div>
+
+				<div class="col-lg-12">
+					<br /> <br />
+					<div class="col-lg-3"></div>
+					<div class="col-lg-6">
+						<input type="text" class="form-control"
+							placeholder="SDN Controller URL" id="url"> <br /> <input
+							type="text" class="form-control"
+							placeholder="SDN Controller Username" id="username"> <br />
+						<input type="password" class="form-control"
+							placeholder="SDN Controller Password" id="password"> <br />
+						<br />
+						<div class="col-lg-8 col-lg-offset-2 text-center">
+							<a href="javascript:trackNetworkStatisticsClicked();"
+								class="btn btn-lg btn-outline"> <i class="fa fa-tachometer"></i>
+								Track Network Statistics
+							</a>
+						</div>
+
+					</div>
+					<div class="col-lg-3"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- About Section -->
+	<section id="nodes">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>Network Devices</h2>
+					<hr />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12" align="center">
+					<p>This section shows all the device loaded into OpenDaylight.
+						I have created a thumbnail for these devices.</p>
+					<p>You can very well use any JS plotting frameworks to show the
+						network topology also</p>
+					<br /> <br />
+
+				</div>
+			</div>
+
+			<div class="row" id="nodesButton">
+				<div class="col-md-12" align="center">
+					<a href="#page-top" class="btn btn-success"> Please enter
+						OpenDaylight credentials first. </a> <br /> <br />
+				</div>
+			</div>
+
+			<div class="row hidden" id="nodesDiv">
+				<!-- <div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<br /> <br /> <img src="img/device.png" alt="...">
+						<div class="caption">
+							<h4>Switch 1</h4>
+							<ul class="list-group">
+								<li class="list-group-item"><b>Id:</b> 1</li>
+								<li class="list-group-item"><b>Name:</b> Switch 1</li>
+								<li class="list-group-item"><b>MAC:</b> 00:50:56:80:e0:2b</li>
+								<li class="list-group-item"><b>Connected Since:</b> 2 Hours</li>
+							</ul>
+							<p>
+								<a href="#port" class="btn btn-success" role="button">Port
+									Stats</a> <a href="#table" class="btn btn-success" role="button">Table
+									Stats</a>
+							</p>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="port" style="background: #C8D1DA;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>Port Statistics</h2>
+					<hr />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12" align="center">
+					<p>This section shows the port statistics of the selected
+						device.</p>
+					<p>
+						You can intelligently show which ports are running maximum traffic
+						and are at risk etc. <br />There are numerous use cases that open
+						up with this data
+					</p>
+					<br /> <br />
+				</div>
+			</div>
+
+			<div class="row" id="portButton">
+				<div class="col-md-12" align="center">
+					<a href="#nodes" class="btn btn-success"> Please select a
+						device to view port statistics. </a> <br /> <br />
+				</div>
+			</div>
+
+			<div class="row hidden" id="portDiv">
+				<!-- <div class="col-lg-12">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h4>Switch 1 : Port Statistics</h4>
+						</div>
+						<div class="panel-body">
+							<div class="col-sm-2 col-md-2">
+								<div class="thumbnail">
+									<img src="img/port.png" alt="..." height="60" width="60">
+									<div class="caption">
+										<p align="center">Port: 1</p>
+									</div>
+									Packet Rx: 3<br /> Packet Tx: 3987987<br />Byte Rx: 3<br />Byte
+									Tx: 3<br />Drop Rx: 3<br />Drop Tx: 3
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="table">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>Table Statistics</h2>
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12" align="center">
+					<p>This section shows the OpenFlow table statistics of the
+						selected device.</p>
+					<p>This information is helpul in pre-configuring the switch and
+						knowing the switch capacity.</p>
+					<br /> <br />
+				</div>
+			</div>
+
+			<div class="row" id="tableButton">
+				<div class="col-md-12" align="center">
+					<a href="#nodes" class="btn btn-success"> Please select a
+						device to view table statistics. </a> <br /> <br />
+				</div>
+			</div>
+
+			<div class="row hidden" id="tableDiv">
+				<!-- <div class="col-lg-12">
+					<div class="panel panel-success">
+						Default panel contents
+						<div class="panel-heading">
+							<h4>Switch 1 : Table Statistics</h4>
+						</div>
+						<div class="panel-body">
+							<p>Table Id: 0</p>
+						</div>
+
+						List group
+						<ul class="list-group">
+							<li class="list-group-item"><span
+								class="badge badge-success">16</span>Active Count</li>
+							<li class="list-group-item"><span
+								class="badge badge-success">17335553</span>Lookup Count</li>
+							<li class="list-group-item"><span
+								class="badge badge-success">11760792</span>Matched Count</li>
+							<li class="list-group-item"><span
+								class="badge badge-success">131072</span>Maximum Supported
+								Entries</li>
+						</ul>
+					</div>
+				</div> -->
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="text-center">
+		<div class="footer-below">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">Network Statistics SDN Application by
+						Saurabh Agarwal</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery Version 1.11.0 -->
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.js"></script>
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/contact_me.js"></script>
+	<script src="js/freelancer.js"></script>
+	
+	<!-- This is where all the magic happen -->
+	<script src="scripts/NetworkStats.js"></script>
+
+</body>
+
+</html>
