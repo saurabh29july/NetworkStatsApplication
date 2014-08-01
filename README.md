@@ -1,7 +1,5 @@
-NetworkStatsApplication
-=======================
-
 Network Statistics Sample SDN Application With OpenDaylight
+=======================
 
 Bundled into a beautiful GUI, Network Statistics SDN Application runs on-top of a OpenDaylight SDN Controller and tracks port & table statistics of devices/nodes managed via OpenDaylight SDN Controller. Pure jQuery/Bootstrap and HTML based application without any server-side code.
 
