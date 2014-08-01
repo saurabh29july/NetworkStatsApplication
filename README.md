@@ -13,7 +13,7 @@ Things you can do in this application:
 
 If you are interested in running it:
 
-    You can get the complete code from my git or if that’s too much work and you don’t intend to change code & just want to see it in action, download the file of this application from here (do “Save Link As“, this is .png, rename it to .war).
-    Run the application either from code or by dropping the .war into tomcat/jetty/jboss (some web server)
+    Download the code.
+    Run the application from code in tomcat/jetty/jboss (some web server)
     Supply your pre-installed OpenDaylight credentials and see it in action at http://localhost:8080/NetworkStatsApplication/
 
