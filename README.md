@@ -15,5 +15,6 @@ If you are interested in running it:
 
     Download the code.
     Run the application from code in tomcat/jetty/jboss (some web server)
-    Supply your pre-installed OpenDaylight credentials and see it in action at http://localhost:8080/NetworkStatsApplication/
+    See it in action at http://localhost:8080/NetworkStatsApplication/
+    Supply your pre-installed OpenDaylight credentials.
 
